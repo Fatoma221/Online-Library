@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Books</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="Admin-Dashboard.html">Admin Dashboard</a></li>
+        <li><a href="AddBook.html">Add New Book</a></li>
+        <li><a href="BookDetails.html">Books</a></li>
+        <li><a href="BorrowedBooks.html">Borrowed Books</a></li>
+    </ul>
+</nav>
+
+<h1>Search Books</h1>
+
+<form>
+    <label>Book Title:</label><br>
+    <input type="text"><br><br>
+
+    <label>Author:</label><br>
+    <input type="text"><br><br>
+
+    <label>Category:</label><br>
+    <select>
+        <option>Select Category</option>
+        <option>Programming</option>
+        <option>Science</option>
+        <option>History</option>
+        <option>Novels</option>
+    </select>
+
+    <br><br>
+    <button type="submit">Search</button>
+</form>
+
+<h2>Results</h2>
+
+<table border="1" width="70%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Availability</th>
+        <th>Action</th>
+    </tr>
+
+    <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td>
+            <select>
+                <option>Available</option>
+                <option>Not Available</option>
+            </select>
+        </td>
+        <td><button>Borrow</button></td>
+    </tr>
+</table>
+
+</body>
+</html>
