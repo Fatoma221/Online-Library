@@ -10,8 +10,6 @@
         <a href="index.html">Home</a> | 
         <a href="signup.html">Sign Up</a> |
         <a href="login.html">Login</a> | 
-        <!-- <a href="Admin-Dashboard.html">Admin Dashboard</a> |  
-        <a href="AddBook.html">Add New Book</a> |  -->
         
     </nav>
     <hr>
@@ -20,21 +18,21 @@
         <form action="/login.html" target="_self" method="get">
             <label for="username">Username: </label>
             <br>
-            <input type="text" name="username" id="username" placeholder="Ahmed Mohamed">
+            <input type="text" name="username" id="username" placeholder="Ahmed Mohamed" required>
             <br><br>
             <label for="email">Email: </label>
             <br>
-            <input type="email" name="email" id="email" placeholder="example@gmail.com">
+            <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
             <br><br>
             <label for="password">Password:</label>
             <br>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
             <br><br>
             <label for="confirm-pass">Confirm Password: </label>
             <br>
-            <input type="password" name="confirm-pass" id="confirm-pass">
+            <input type="password" name="confirm-pass" id="confirm-pass" required>
             <br><br>
-            <input type="checkbox" name="checkbox" id="checkbox"> Is Admin
+            <input type="checkbox" name="checkbox" id="checkbox" required> Is Admin
             <br><br>
             <input type="submit" value="Sign Up">
             <p>Already have an account?  <a href="login.html">Login</a></p>
