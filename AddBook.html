@@ -3,19 +3,20 @@
   <title>AddBook</title>
 </head>
 <body>
- <nav>
-        <a href="index.html">Home</a> | 
-        <a href="signup.html">Sign Up</a> |
-        <a href="login.html">Login</a> |
-        <a href="Admin-Dashboard.html">Admin Dashboard</a> |
-        <a href="AddBook.html">Add New Book</a> |   
+    <nav>
+      <a href="index.html">Home</a> | 
+      <a href="Admin-Dashboard.html">Admin-Dashboard</a> | 
+      <a href="AddBook.html">Add New Book</a> | 
+      <a href="BookList.html">Books</a> | 
+      <a href="Books-Management.html">Books Management</a> | 
+      <a href="Edit-Book.html">Edit Books</a> | 
     </nav>
     <hr>
-  <h3>Add New Book :</h3>
-  <form action="" target="_self" method="post">
+  <h1>Add New Book :</h1>
+  <form action="Admin-Dashboard.html" target="_self" method="get">
     <label for="Book ID">Book ID : </label>
     <br />
-    <input type="Book Id " name="Book ID " id="Book ID" />
+    <input type="number" name="Book ID " id="Book ID" />
     <br/>
     <br />
     <label for="Book Name ">Book Name : </label>
@@ -25,7 +26,7 @@
      <br />
     <label for="Author"> Author :</label> 
     </br>
-    <input Type="text" name="Author"/>
+    <input type="text" name="Author"/>
     </br>
      <br />
     <label for="Category ">Category : </label>
@@ -38,8 +39,6 @@
     <input type="text" name="Description"/>
      <br />
       <br />
+    <input type="submit" value="Save Book and Return" />
   </form>  
-      <form action="Admin-Dashboard.html" method="get">
-      <input type="submit" value="Save Book and Return" />
-      </form>
 </body>

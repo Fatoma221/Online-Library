@@ -7,14 +7,15 @@
 </head>
 <body>
     <nav>
-      <a href="index.html">Home</a> | <a href="signup.html">Sign Up</a> |
+      <a href="index.html">Home</a> |
+      <a href="signup.html">Sign Up</a> |
       <a href="login.html">Login</a> |
-      <a href="Admin-Dashboard.html">Admin Dashboard</a> |
-      <a href="AddBook.html">Add New Book</a> |
+      <!-- <a href="Admin-Dashboard.html">Admin Dashboard</a> |
+      <a href="AddBook.html">Add New Book</a> | -->
     </nav>
     <hr>
     <h1>Login</h1>
-    <form action="" target="_self" method="post">
+    <form target="_self" method="get">
         <label for="email">Email: </label>
         <br>
         <input type="email" name="email" id="email" placeholder="example@gmail.com">
@@ -23,12 +24,10 @@
         <br>
         <input type="password" name="password" id="password">
         <br><br>    
-      <input type="submit" value="Login as User" />
-        </form>
-    <br />
-      <form action="Admin-Dashboard.html" method="get">
-        <input type="submit" value="Login as Admin" />
-        </form>
+        <button type="submit" formaction="User-Dashboard.html">Login as User</button>
+        <br><br>
+        <button type="submit" formaction="Admin-Dashboard.html">Login as Admin</button>
+      </form>
     <p>Create new account? <a href="signup.html">Sign Up</a></p>
   </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="BookDetails.html">Books</a> |
+    <a href="BorrowedBooks.html">Borrowed Books</a> |
+    <a href="Search-Books.html">Search Books</a> |
+</nav>
+<hr>
+
+<h1>User Dashboard</h1>
+
+<h2>User Info</h2>
+<form>
+    <label>Username:</label><br>
+    <input type="text" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" required><br><br>
+</form>
+
+<h2>Borrowed Books</h2>
+
+<table border="1" width="60%">
+    <tr>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Status</th>
+    </tr>
+
+    <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td>
+            <select>
+                <option>Borrowed</option>
+                <option>Returned</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<br>
+<button>Update</button>
+
+</body>
+</html>

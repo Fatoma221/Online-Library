@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Books</title>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="User-Dashboard.html">User Dashboard</a> |
+    <a href="BookDetails.html">Books</a> |
+    <a href="BorrowedBooks.html">Borrowed Books</a> |
+    <a href="Search-Books.html">Search Books</a> |
+</nav>
+<hr>
+
+<h1>Search Books</h1>
+
+<form>
+    <label>Book Title:</label><br>
+    <input type="text"><br><br>
+
+    <label>Author:</label><br>
+    <input type="text"><br><br>
+
+    <label>Category:</label><br>
+    <select>
+        <option>Select Category</option>
+        <option>Programming</option>
+        <option>Science</option>
+        <option>History</option>
+        <option>Novels</option>
+    </select>
+
+    <br><br>
+    <button type="submit">Search</button>
+</form>
+
+<h2>Results</h2>
+
+<table border="1" width="70%">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Availability</th>
+        <th>Action</th>
+    </tr>
+
+    <tr>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td>
+            <select>
+                <option>Available</option>
+                <option>Not Available</option>
+            </select>
+        </td>
+        <td><button>Borrow</button></td>
+    </tr>
+</table>
+
+</body>
+</html>
