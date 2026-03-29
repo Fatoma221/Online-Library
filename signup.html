@@ -3,40 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Sign Up</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a> | 
-        <a href="signup.html">Sign Up</a> |
-        <a href="login.html">Login</a> | 
-        
-    </nav>
-    <hr>
-    <h1>Sign Up</h1>
-    <div class="sign-up-form">
-        <form action="login.html" target="_self" method="get">
-            <label for="username">Username: </label>
-            <br>
-            <input type="text" name="username" id="username" placeholder="Ahmed Mohamed" required>
-            <br><br>
-            <label for="email">Email: </label>
-            <br>
-            <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
-            <br><br>
-            <label for="password">Password:</label>
-            <br>
-            <input type="password" name="password" id="password" required>
-            <br><br>
-            <label for="confirm-pass">Confirm Password: </label>
-            <br>
-            <input type="password" name="confirm-pass" id="confirm-pass" required>
-            <br><br>
-            <input type="checkbox" name="checkbox" id="checkbox"> Is Admin
-            <br><br>
-            <input type="submit" value="Sign Up">
-            <p>Already have an account?  <a href="login.html">Login</a></p>
-        </form>
-    </div>
+    <header>
+      <nav>
+        <div class="logo">E-Book</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a> 
+          <a href="signup.html">Sign Up</a> 
+          <a href="login.html">Login</a> 
+        </div>
+      </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="sign-up-form">
+                <h1>Sign Up</h1>
+                <p class="signup-form-quote">Immerse yourself in a curated sanctuary of human thought and discovery.</p>
+                <form action="login.html" target="_self" method="get">
+                    <div class="grid">
+                        <div class="field">
+                            <label for="username">Username: </label>
+                            <input type="text" name="username" id="username" placeholder="Ahmed Mohamed" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email: </label>
+                            <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" placeholder="• • • • • • • •" autocomplete="off" required>
+                        </div>
+                        <div class="field">
+                            <label for="confirm-pass">Confirm Password: </label>
+                            <input type="password" name="confirm-pass" id="confirm-pass" placeholder="• • • • • • • •" autocomplete="off" required>
+                        </div>
+                    </div>
+                    <div class="is-admin-wrap">
+                        <label class="is-admin">Is Admin</label>
+                        <input type="checkbox" class="is-admin" name="checkbox" id="checkbox">
+                    </div>
+                    <button type="submit" class="sign-up-btn" formaction="User-Dashboard.html">
+                        Sign Up
+                    </button>
+                    <!-- <input type="submit" value="Sign Up"> -->
+                    <p class="signup-form-quote">Already have an account?  <a href="login.html" class="login">Login</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    
+    <footer>
+      <div class="footer-brand">
+        <p>E-Book</p>
+      </div>
+      <div class="footer-servcies"> 
+        <p>Privacy Policy</p>
+        <p>Terms of Service</p>
+        <p>Cookie Policy</p>
+        <p>Contact Us</p>
+      </div>
+      <div class="footer-copyrights">
+        <p>&copy; 2025 E-Book. All rights reserved.</p>
+      </div>
+    </footer>
 </body>
 </html>
