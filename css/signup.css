@@ -80,6 +80,7 @@ button {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
     width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
 } 
 
@@ -107,7 +108,7 @@ label {
     border: 2px #f5f5fa solid;
     color: #03192E;
     margin-bottom: 10px;
-    width: 220px
+    min-width: 220px;
 }
 
 input:focus{
