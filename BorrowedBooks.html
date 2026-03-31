@@ -1,37 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Borrowed Books</title>
+    <meta charset="UTF-8">
+    <title>The Digital Archivist - Borrowed Books</title>
+    <link rel="stylesheet" href="css\BorrowedBooks.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<nav>
-    <a href="index.html">Home</a> |
-    <a href="User-Dashboard.html">User Dashboard</a> |
-    <a href="BookDetails.html">Books</a> |
-    <a href="BorrowedBooks.html">Borrowed Books</a> |
-    <a href="Search-Books.html">Search Books</a> |
-</nav>
-<hr>
+<header>
+    <div class="logo">The Digital Archivist</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="BookDetails.html" class="active">Books</a>
+        <a href="User-Dashboard.html">Dashboard</a>
+    </nav>
+    <div class="header-icons">🔍 👤</div>
+</header>
 
-<h1>My Borrowed Books</h1>
+<main>
+    <section class="hero">
+        <span class="badge">CURATED COLLECTION</span>
+        <h1>My Borrowed Books</h1>
+        <p>A personalized ledger of your current scholarly pursuits. Manage your borrowed volumes and track your reading progress within the digital stacks.</p>
+    </section>
 
-<table border="1">
+    <section class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>BOOK NAME</th>
+                    <th>AUTHOR</th>
+                    <th>CATEGORY</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="book-info">
+                             <img src="images/cleancode.jpg" class="book-cover">
+                            <div>
+                                <strong>Clean Code</strong><br>
+                                <small>REF: ARCH-2024-CC</small>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Robert Martin</td>
+                    <td><span class="tag">PROGRAMMING</span></td>
+                    <td><span class="status-on-loan">● On Loan</span></td>
+                </tr>
+                <tr class="archived">
+                    <td>
+                        <div class="book-info">
+                            <span class="book-icon gray">📖</span>
+                            <div>
+                                <strong>The Pragmatic Programmer</strong><br>
+                                <small>REF: ARCH-2024-PP</small>
+                            </div>
+                        </div>
+                    </td>
+                    <td>Andrew Hunt</td>
+                    <td><span class="tag">ENGINEERING</span></td>
+                    <td><span class="status-archived">● Archived</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-    <tr>
-        <th>Book Name</th>
-        <th>Author</th>
-        <th>Category</th>
-    </tr>
+    <section class="stats-grid">
+        <div class="stat-card dark">
+            <span class="stat-icon">📚</span>
+            <h2>12</h2>
+            <p>TOTAL LOANS</p>
+        </div>
+        <div class="stat-card">
+            <span class="stat-icon gold">⏳</span>
+            <h2>02</h2>
+            <p>DUE THIS WEEK</p>
+        </div>
+        <div class="stat-card">
+            <span class="stat-icon gold">✔️</span>
+            <h2>84%</h2>
+            <p>ARCHIVIST RATING</p>
+        </div>
+    </section>
+</main>
 
-    <tr>
-        <td>Clean Code</td>
-        <td>Robert Martin</td>
-        <td>Programming</td>
-    </tr>
-
-</table>
+<footer>
+    <p>The Digital Archivist © 2024. CURATING HISTORY FOR THE MODERN ERA. | PRIVACY POLICY | TERMS OF SERVICE | CONTACT</p>
+</footer>
 
 </body>
 </html>
