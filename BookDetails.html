@@ -1,59 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>BookDetails</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Archivist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css\BookDetails.css">
 </head>
-
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="User-Dashboard.html">User Dashboard</a> |
-        <a href="BookDetails.html">Books</a> |
-        <a href="BorrowedBooks.html">Borrowed Books</a> |
-        <a href="Search-Books.html">Search Books</a> |
-    </nav>
-    <hr>
-    <h1>Available Books</h1> 
 
-    <table border="1">
+    <header class="top-nav">
+        <div class="logo">The Digital Archivist</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="BookDetails.html" class="active-link">Books</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="search-profile">
+            <span>🔍 Search...</span> 
+        </div>
+    </header>
 
-        <tr>
-            <th>Book Name</th>
-            <th>Author</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
+    <div class="main-container">
+        <p class="section-label">COLLECTION INDEX</p>
+        <h1 class="main-title">Available Books</h1>
+        <p class="subtitle">Explore our curated selection of foundational knowledge. Each volume in this digital repository has been verified for scholarly integrity.</p>
 
-        <tr>
-            <td>Clean Code</td>
-            <td>Robert Martin</td>
-            <td>Programming</td>
-            <td>Software craftsmanship</td>
-            <td>Available</td>
-            <td><a href="BorrowedBooks.html">Borrow</a></td>
-        </tr>
+        <div class="controls">
+            <button class="btn-secondary">▽ FILTER</button>
+            <button class="btn-secondary">⇄ SORT</button>
+        </div>
 
-        <tr>
-            <td>Java Basics</td>
-            <td>John Smith</td>
-            <td>Programming</td>
-            <td>Learn Java step by step</td>
-            <td>Available</td>
-            <td><a href="BorrowedBooks.html">Borrow</a></td>
-        </tr>
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>BOOK NAME</th>
+                    <th>AUTHOR</th>
+                    <th>CATEGORY</th>
+                    <th>DESCRIPTION</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="book-info">
+                         <img src="images\cleancode.jpg" class="book-cover">
+                        <strong>Clean Code</strong>
+                    </td>
+                    <td>Robert C. Martin</td>
+                    <td><span class="tag engineering">ENGINEERING</span></td>
+                    <td>A handbook of agile software craf...</td>
+                    <td><span class="status available">● Available</span></td>
+                    <td><a href="BorrowedBooks.html" class="borrow-link">Borrow</a></td>
+                </tr>
+                <tr>
+                    <td class="book-info">
+                        <img src="images\javabasics.jpg" class="book-cover">
+                        <strong>Java Basics</strong>
+                    </td>
+                    <td>Herbert Schildt</td>
+                    <td><span class="tag development">DEVELOPMENT</span></td>
+                    <td>Essential fundamentals for Java applic...</td>
+                    <td><span class="status available">● Available</span></td>
+                    <td><a href="BorrowedBooks.html" class="borrow-link">Borrow</a></td>
+                </tr>
+                <tr>
+                    <td class="book-info">
+                        <img src="images\databasesystem.jpg" class="book-cover">
+                        <strong>Database Systems</strong>
+                    </td>
+                    <td>Abraham Silberschatz</td>
+                    <td><span class="tag architecture">ARCHITECTURE</span></td>
+                    <td>Deep dive into relational data structur...</td>
+                    <td><span class="status on-loan">● On Loan</span></td>
+                    <td><button class="waitlist-btn">Waitlist</button></td>
+                </tr>
+            </tbody>
+        </table>
+    <div class="featured">
+    <div class="featured-text">
+        <p>LIBRARIAN'S PICK</p>
+        <h2>The Art of Computer Programming</h2>
+        <p>Knuth's masterpiece remains the definitive guide...</p>
+        <button>Request from Stacks →</button>
+    </div>
 
-        <tr>
-            <td>Database Systems</td>
-            <td>Elmasri</td>
-            <td>Database</td>
-            <td>Database concepts</td>
-            <td>Available</td>
-            <td><a href="BorrowedBooks.html">Borrow</a></td>
-        </tr>
-
-    </table>
+    <div class="featured-image"></div>
+</div>
+    </div>
 
 </body>
+<footer class="footer">
+    <p>The Digital Archivist</p>
+</footer>
 </html>
