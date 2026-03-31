@@ -123,7 +123,7 @@ input:focus{
     position: relative;
 }
 
-.forgot-key {
+.forgot-key a {
     color: #775A19;
     font-family: "Manrope", sans-serif;
     font-weight: lighter;
@@ -131,6 +131,7 @@ input:focus{
     position: absolute;
     right: 0;
     bottom: 10px;
+    text-decoration: none;
 }
 
 .divider {
