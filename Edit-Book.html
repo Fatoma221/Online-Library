@@ -2,33 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Book Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a> | 
-        <a href="Admin-Dashboard.html">Admin-Dashboard</a> | 
-        <a href="AddBook.html">Add New Book</a> | 
-        <a href="Books-Management.html">Books Management</a> | 
-        <a href="Edit-Book.html">Edit Books</a> | 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Admin-Dashboard.html">Dashboard</a></li>
+            <li><a href="Books-Management.html">Back to Management</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
     </nav>
-    <hr>
 
-    <h2>Edit Book Details</h2>
-    <form>
-        <label>Book ID:</label><br>
-        <input type="text" value="101" required><br><br>
+    <div class="container">
+        <h2>Edit Book Details</h2>
+        <p style="text-align: center; color: #666;">Update the information for the selected book below.</p>
+        
+        <form id="editBookForm">
+            <div class="form-group">
+                <label for="bookID">Book ID (Read-only):</label>
+                <input type="text" id="bookID" value="101" readonly>
+            </div>
 
-        <label>Book Name:</label><br>
-        <input type="text" required><br><br>
+            <div class="form-group">
+                <label for="bookName">Book Name:</label>
+                <input type="text" id="bookName" placeholder="Enter book title" required>
+            </div>
 
-        <label>Author:</label><br>
-        <input type="text" required><br><br>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author" placeholder="Enter author name" required>
+            </div>
 
-        <label>Description:</label><br>
-        <textarea rows="4" cols="30" required></textarea><br><br>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="Programming">Programming</option>
+                    <option value="Science">Science</option>
+                    <option value="Database">Database</option>
+                    <option value="History">History</option>
+                </select>
+            </div>
 
-        <button type="submit">Update Book</button>
-    </form>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" rows="5" placeholder="Enter book description..."></textarea>
+            </div>
+
+            <button type="submit" class="btn edit-btn" style="width: 100%; margin-top: 15px;">Save Changes</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
