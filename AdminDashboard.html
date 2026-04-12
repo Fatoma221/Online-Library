@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard | Digital Archivist</title>
-    <link rel="stylesheet" href="AdminDashboard.css">
+    <link rel="stylesheet" href="css/AdminDashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar">
-        <div class="logo"> Digital Archivist | <span>Admin</span></div>
+        <div class="logo">Digital Archivist | <span>Admin</span></div>
         <nav class="nav-container">
             <a href="AdminDashboard.html" class="active">Dashboard</a>
             <a href="AddBook.html">Add Book</a>
-            <a href="Books-Management.html" >Manage Books</a>
+            <a href="Books-Management.html">Manage Books</a>
+
             <button class="logout-btn" onclick="window.location.href='login.html'">Exit</button>
         </nav>
     </header>
 
     <main class="dashboard-container">
         <header class="content-header">
-            <h1>Control Panel</h1>
+            <h1> Control Panel</h1>
             <p>Oversee the digital repository and manage preserved knowledge.</p>
         </header>
 
@@ -37,7 +38,7 @@
         <section class="table-section">
             <div class="table-header">
                 <h2>Cataloged Books</h2>
-                <a href="AddBook.html" class="add-new-link">+ Add New Entry</a>
+                <a href="AddBook.html" class="add-new-link">+ New Book</a>
             </div>
             <table id="books-table">
                 <thead>
@@ -56,7 +57,7 @@
         </section>
     </main>
 
-    <script src="storage.js"></script>
+    <script src="js/storage.js"></script>
     <script>
         window.onload = displayBooks;
     </script>
