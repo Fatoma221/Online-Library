@@ -141,36 +141,25 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
 
   if (!validateSignup()) return;
 
-  const name = document.getElementById("username").value;
-  const email = document.getElementById("email").value;
+  const username = document.getElementById("username").value.trim();
+  const email    = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
-  const isAdmin = document.getElementById("checkbox").checked;
+  const isAdmin  = document.getElementById("checkbox").checked;
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  const result = registerUser(username, email, password, isAdmin);
 
-  let exists = users.find(u => u.email === email);
-  if (exists) {
-    alert("User already exists");
+  if (!result.success) {
+    alert(result.msg); // "Email already registered."
     return;
   }
 
-  const newUser = {
-    name,
-    email,
-    password,
-    role: isAdmin ? "admin" : "user"
-  };
-
-  users.push(newUser);
-  localStorage.setItem("users", JSON.stringify(users));
-
-  // Save logged-in user immediately
-  sessionStorage.setItem("currentUser", JSON.stringify(newUser));
+  // Log them in immediately after registration
+  const user = { username, email, role: isAdmin ? "admin" : "user" };
+  setSession(user);
 
   alert("Registered successfully!");
 
-  // Redirect based on role
-  if (newUser.role === "admin") {
+  if (isAdmin) {
     window.location.href = "AdminDashboard.html";
   } else {
     window.location.href = "User-Dashboard.html";

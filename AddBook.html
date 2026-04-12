@@ -2,50 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Digital Archivist | Add Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book | Digital Archivist</title>
     <link rel="stylesheet" href="css/AddBook.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="auth-wrapper">
-        <div class="auth-card">
-            <div class="auth-header">
-                <h2>Add New Book</h2>
-                <p>Register a new volume into the digital archives.</p>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="topnav">
+        <div class="topnav-left">
+            <div>
+                <h2>The Digital Archivist</h2>
+                <p>Catalog Registry &amp; Records</p>
             </div>
-            
-            <form id="add-book-form">
-                <div class="input-group">
-                    <label>Book ID</label>
-                    <input type="number" id="book_id" placeholder="e.g. 1024" required>
+        </div>
+        <div class="topnav-right">
+            <a href="AdminDashboard.html">
+                <div class="admin-avatar">
+                    <i class="fa-regular fa-user"></i>
                 </div>
-
-                <div class="input-group">
-                    <label>Book Title</label>
-                    <input type="text" id="book_name" placeholder="Title of the work" required>
-                </div>
-
-                <div class="input-group">
-                    <label>Author</label>
-                    <input type="text" id="author" placeholder="Full name of author" required>
-                </div>
-
-                <div class="input-group">
-                    <label>Category</label>
-                    <input type="text" id="category" placeholder="e.g. History, Science">
-                </div>
-
-                <div class="input-group">
-                    <label>Short Description</label>
-                    <textarea id="description" rows="3" placeholder="Brief summary of the content..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Save to Archives</button>
-                <a href="AdminDashboard.html" class="back-link">Return to Dashboard</a>
-            </form>
+            </a>
         </div>
     </div>
 
+    <div class="layout">
+        <div class="iconbar">
+            <button class="iconbar-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <div class="sidebar-logo">
+                    <div class="logo-icon"><img src="imgs/logo.jpg" alt="logo" /></div>
+                    <div class="logo-text">
+                        <h4>The Archivist</h4>
+                        <p>System Administration</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="AdminDashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                    <li><a href="BookList.html"><i class="fa-solid fa-book-open"></i> Book List</a></li>
+                    <li><a href="Books-Management.html"><i class="fa-solid fa-person"></i> Management</a></li>
+                    <li><a href="AddBook.html" class="active"><i class="fa-solid fa-plus"></i> Add Book</a></li>
+                    <li><a href="Edit-Book.html"><i class="fa-solid fa-list"></i> Edit Books</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-bottom">
+                <ul class="nav-links">
+                    <li><a href="#" id="logout-btn" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="page-title">
+                <h1>Add New Book</h1>
+                <p>Register a new volume into the digital archives.</p>
+            </div>
+
+            <div class="auth-wrapper">
+                <div class="auth-card">
+                    <form id="add-book-form">
+                        <div class="input-group">
+                            <label>Book Title</label>
+                            <input type="text" id="book_title" placeholder="Title of the work" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Author</label>
+                            <input type="text" id="book_author" placeholder="Full name of author" required>
+                        </div>
+                        <div class="input-group">
+                            <label>ISBN</label>
+                            <input type="text" id="book_isbn" placeholder="e.g. 978-0-001">
+                        </div>
+                        <div class="input-group">
+                            <label>Genre</label>
+                            <select id="book_genre">
+                                <option value="">Select Genre</option>
+                                <option>Historical Fiction</option>
+                                <option>Poetry</option>
+                                <option>Adventure</option>
+                                <option>Science</option>
+                                <option>Non-Fiction</option>
+                                <option>Engineering</option>
+                                <option>Programming</option>
+                                <option>Philosophy</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Short Description</label>
+                            <textarea id="book_description" rows="3" placeholder="Brief summary of the content..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Cover Image</label>
+                            <div class="upload-box">
+                                <label class="upload-label" for="book_cover">
+                                    <!-- <i class="fa-solid fa-cloud-arrow-up upload-icon"></i> -->
+                                    <p>Click to upload cover image</p>
+                                    <small>PNG, JPG supported</small>
+                                </label>
+                                <input type="file" id="book_cover" accept="image/*" hidden>
+                                <img id="cover-preview" class="cover-preview hidden" alt="Cover Preview">
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Save to Archives</button>
+                        <a href="AdminDashboard.html" class="back-link">Return to Dashboard</a>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="footer">
+        © 2024 The Digital Archivist &nbsp;•&nbsp; Preserving Knowledge
+    </div>
+
     <script src="js/storage.js"></script>
+    <script src="js/AddBook.js"></script>
 </body>
 </html>

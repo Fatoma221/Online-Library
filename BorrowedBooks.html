@@ -2,113 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Digital Archivist - Borrowed Books</title>
-    <link rel="stylesheet" href="css\BorrowedBooks.css">
+    <link rel="stylesheet" href="css/BorrowedBooks.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <div class="logo">The Digital Archivist</div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="BookDetails.html" class="active">Books</a>
-        <a href="User-Dashboard.html">Dashboard</a>
+        <div class="logo">The Digital Archivist</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="BookDetails.html">Books</a></li>
+            <li><a href="Search-Books.html">Search</a></li>
+            <li><a href="BorrowedBooks.html" class="active">My Library</a></li>
+            <li><a href="User-Dashboard.html">Dashboard</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
     </nav>
-    <div class="header-icons">🔍 👤</div>
-</header>
 
-<main>
-    <section class="hero">
-        <span class="badge">CURATED COLLECTION</span>
-        <h1>My Borrowed Books</h1>
-        <p>A personalized ledger of your current scholarly pursuits. Manage your borrowed volumes and track your reading progress within the digital stacks.</p>
-    </section>
+    <main>
+        <section class="hero">
+            <span class="badge">CURATED COLLECTION</span>
+            <h1>My Borrowed Books</h1>
+            <p>A personalized ledger of your current scholarly pursuits. Manage your borrowed volumes and track your reading progress.</p>
+        </section>
 
-    <section class="table-container">
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>BOOK NAME</th>
-                    <th>AUTHOR</th>
-                    <th>CATEGORY</th>
-                    <th>STATUS</th>
-                </tr>
-            </thead>
-            <tbody  id="bookTableBody">
-            </tbody>
-        </table>
-    </section>
+        <section class="table-container">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>BOOK NAME</th>
+                        <th>AUTHOR</th>
+                        <th>GENRE</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="borrowed-tbody">
+                    <!-- filled by JS -->
+                </tbody>
+            </table>
+            <p id="no-borrows-msg" class="no-borrows-msg hidden">
+                You have no borrowed books currently. 
+                <a href="BookDetails.html">Browse books →</a>
+            </p>
+        </section>
 
-    <section class="stats-grid">
-        <div class="stat-card dark">
-            <span class="stat-icon">📚</span>
-            <h2>12</h2>
-            <p>TOTAL LOANS</p>
-        </div>
-        <div class="stat-card">
-            <span class="stat-icon gold">⏳</span>
-            <h2>02</h2>
-            <p>DUE THIS WEEK</p>
-        </div>
-        <div class="stat-card">
-            <span class="stat-icon gold">✔️</span>
-            <h2>84%</h2>
-            <p>ARCHIVIST RATING</p>
-        </div>
-    </section>
-</main>
+        <section class="stats-grid">
+            <div class="stat-card dark">
+                <span class="stat-icon">📚</span>
+                <h2 id="stat-total">0</h2>
+                <p>TOTAL BORROWED</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon gold">⏳</span>
+                <h2 id="stat-active">0</h2>
+                <p>CURRENTLY ON LOAN</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon gold">✔️</span>
+                <h2 id="stat-returned">0</h2>
+                <p>RETURNED</p>
+            </div>
+        </section>
+    </main>
 
-<footer>
-    <p>The Digital Archivist © 2024. CURATING HISTORY FOR THE MODERN ERA. | PRIVACY POLICY | TERMS OF SERVICE | CONTACT</p>
-</footer>
+    <footer>
+        <p>The Digital Archivist © 2024. CURATING HISTORY FOR THE MODERN ERA. | PRIVACY POLICY | TERMS OF SERVICE | CONTACT</p>
+    </footer>
 
-<script>
-    const bookName = localStorage.getItem("selectedBook");
-    const tableBody = document.getElementById("bookTableBody");
-
-    if (bookName) {
-
-        let bookData = {
-            "Clean Code": {
-                author: "Robert C. Martin",
-                category: "ENGINEERING",
-                image: "img/cleancode.jpg"
-            },
-            "Java Basics": {
-                author: "Herbert Schildt",
-                category: "DEVELOPMENT",
-                image: "img/javabasics.jpg"
-            },
-            "Database Systems": {
-                author: "Abraham Silberschatz",
-                category: "ARCHITECTURE",
-                image: "img/databasesystem.jpg"
-            }
-        };
-
-        let book = bookData[bookName];
-
-        tableBody.innerHTML = `
-            <tr>
-                <td>
-                    <div class="book-info">
-                        <img src="${book.image}" class="book-cover">
-                        <div>
-                            <strong>${bookName}</strong><br>
-                            <small>REF: USER-BOOK</small>
-                        </div>
-                    </div>
-                </td>
-                <td>${book.author}</td>
-                <td><span class="tag">${book.category}</span></td>
-                <td><span class="status-on-loan">● On Loan</span></td>
-            </tr>
-        `;
-    } else {
-        tableBody.innerHTML = "<tr><td colspan='4'>No book selected</td></tr>";
-    }
-</script>
-
+    <script src="js/storage.js"></script>
+    <script src="js/BorrowedBooks.js"></script>
 </body>
 </html>

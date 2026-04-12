@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Digital Archivist</title>
+    <title>The Digital Archivist — Books</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css\BookDetails.css">
+    <link rel="stylesheet" href="css/BookDetails.css">
 </head>
 <body>
 
-    <header class="top-nav">
+    <nav>
         <div class="logo">The Digital Archivist</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="BookDetails.html" class="active-link">Books</a>
-            <a href="#">About</a>
-        </nav>
-        <div class="search-profile">
-            <span>🔍 Search...</span> 
-        </div>
-    </header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="BookDetails.html" class="active">Books</a></li>
+            <li><a href="Search-Books.html">Search</a></li>
+            <li><a href="BorrowedBooks.html">My Library</a></li>
+            <li><a href="User-Dashboard.html">Dashboard</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
 
     <div class="main-container">
         <p class="section-label">COLLECTION INDEX</p>
         <h1 class="main-title">Available Books</h1>
-        <p class="subtitle">Explore our curated selection of foundational knowledge. Each volume in this digital repository has been verified for scholarly integrity.</p>
-
+        <p class="subtitle">Explore our curated selection of foundational knowledge. Each volume has been verified for scholarly integrity.</p>
 
         <table class="custom-table">
             <thead>
@@ -38,61 +37,17 @@
                     <th>ACTIONS</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td class="book-info">
-                         <img src="img\cleancode.jpg" class="book-cover">
-                        <strong>Clean Code</strong>
-                    </td>
-                    <td>Robert C. Martin</td>
-                    <td><span class="tag engineering">ENGINEERING</span></td>
-                    <td>A handbook of agile software craf...</td>
-                    <td><span class="status available">● Available</span></td>
-                    <td><a href="BorrowedBooks.html" class="borrow-link" onclick="borrowBook('Clean Code')">Borrow</a></td>
-                </tr>
-                <tr>
-                    <td class="book-info">
-                        <img src="img\javabasics.jpg" class="book-cover">
-                        <strong>Java Basics</strong>
-                    </td>
-                    <td>Herbert Schildt</td>
-                    <td><span class="tag development">DEVELOPMENT</span></td>
-                    <td>Essential fundamentals for Java applic...</td>
-                    <td><span class="status available">● Available</span></td>
-                    <td><a href="BorrowedBooks.html" class="borrow-link" onclick="borrowBook('Java Basics')">Borrow</a></td>
-                </tr>
-                <tr>
-                    <td class="book-info">
-                        <img src="img\databasesystem.jpg" class="book-cover">
-                        <strong>Database Systems</strong>
-                    </td>
-                    <td>Abraham Silberschatz</td>
-                    <td><span class="tag architecture">ARCHITECTURE</span></td>
-                    <td>Deep dive into relational data structur...</td>
-                    <td><span class="status on-loan">● On Loan</span></td>
-                    <td><button class="waitlist-btn">Waitlist</button></td>
-                </tr>
+            <tbody id="books-tbody">
+                <!-- filled by JS -->
             </tbody>
         </table>
-    <div class="featured">
-    <div class="featured-text">
-        <p>LIBRARIAN'S PICK</p>
-        <h2>The Art of Computer Programming</h2>
-        <p>Knuth's masterpiece remains the definitive guide...</p>
-        <button>Request from Stacks →</button>
     </div>
 
-    <div class="featured-image"></div>
-</div>
-    </div>
-<script>
-   function borrowBook(bookName) {
-      localStorage.setItem("selectedBook", bookName);
-}
-</script>
+    <footer>
+        <p>The Digital Archivist © 2024. CURATING HISTORY FOR THE MODERN ERA. | PRIVACY POLICY | TERMS OF SERVICE | CONTACT</p>
+    </footer>
 
+    <script src="js/storage.js"></script>
+    <script src="js/BookDetails.js"></script>
 </body>
-<footer class="footer">
-    <p>The Digital Archivist</p>
-</footer>
 </html>

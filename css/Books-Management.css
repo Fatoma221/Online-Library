@@ -438,3 +438,50 @@ td {
     border-top: 1px solid #e8e8e8; 
     background: white; 
 }
+
+.actions-cell {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn {
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s;
+    border: 1px solid transparent;
+}
+
+.edit-btn {
+    background: #f0f2f0;
+    color: #1a1a2e;
+    border-color: #d0d0d0;
+}
+
+.edit-btn:hover {
+    background: #1a1a2e;
+    color: white;
+}
+
+.delete-btn {
+    background: transparent;
+    color: #c0392b;
+    border-color: #c0392b;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+    color: white;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #aaa;
+    padding: 30px;
+}

@@ -82,33 +82,22 @@ document.querySelector(".admin-btn").addEventListener("click", (e) => {
 
 // Handling Local Storage
 function handleLogin(role) {
-  const email = document.getElementById("email");
+  const email    = document.getElementById("email");
   const password = document.getElementById("password");
 
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-
-  let user = users.find(
-    u => u.email === email.value && u.password === password.value
-  );
+  const user = loginUser(email.value.trim(), password.value, role);
 
   if (!user) {
-    alert("Invalid credentials");
-    return;
-  }
-
-  // Role Check
-  if (role === "admin" && user.role !== "admin") {
-    showError(email, "You are not an admin.");
-    return;
-  }
-
-  if (role === "user" && user.role !== "user") {
-    showError(email, "You are not a normal user.");
+    if (role === "admin") {
+      showError(email, "No admin account found with these credentials.");
+    } else {
+      showError(email, "Invalid email or password.");
+    }
     return;
   }
 
   // Save session
-  sessionStorage.setItem("currentUser", JSON.stringify(user));
+  setSession(user);
 
   // Redirect
   if (user.role === "admin") {

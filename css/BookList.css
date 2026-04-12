@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .overlay {
     display: none;
     position: fixed;
@@ -37,7 +42,7 @@
     color: dimgray;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-top: -14px;
+    margin-top: 5px;
 }
 
 .topnav-right {
@@ -569,4 +574,45 @@ td {
     text-transform: uppercase;
     border-top: 1px solid #e8e8e8;
     background: white;
+}
+
+.admin-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  background: #1a1a2e;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.admin-nav .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.admin-nav .logo span {
+  color: goldenrod;
+}
+
+.admin-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.admin-nav ul a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.admin-nav ul a:hover,
+.admin-nav ul a.active {
+  color: goldenrod;
 }
